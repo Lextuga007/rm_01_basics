@@ -7,6 +7,14 @@ editor_options:
   chunk_output_type: inline
 ---
 
+```{r}
+# This sets the default connection to "con"
+knitr::opts_chunk$set(connection = "con",
+                      eval = FALSE,
+                      echo = TRUE)
+```
+
+
 ```{r setup, include=FALSE}
 
 library(odbc) # necessary for connecting to SQL server
@@ -37,10 +45,6 @@ con_server3 <- dbConnect(odbc(),
                  Database = "<DatabaseName>",
                  Trusted_Connection = "True")
 
-# This sets the default connection to "con"
-knitr::opts_chunk$set(connection = "con",
-                      eval = FALSE,
-                      echo = TRUE)
 ```
 
 ## Naming tables
